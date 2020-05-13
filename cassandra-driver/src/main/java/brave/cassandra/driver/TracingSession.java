@@ -32,6 +32,8 @@ import com.datastax.driver.core.Statement;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
+
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.util.LinkedHashMap;
@@ -106,7 +108,7 @@ public class TracingSession extends AbstractSession {
             span.error(e);
             span.finish();
           }
-        });
+        }, MoreExecutors.directExecutor());
     return result;
   }
 

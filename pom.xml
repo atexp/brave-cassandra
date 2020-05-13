@@ -161,6 +161,12 @@
           </exclusion>
         </exclusions>
       </dependency>
+      <!-- Upgrade to recent guava to make sure we don't use outdated APIs -->
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>28.2-jre</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
